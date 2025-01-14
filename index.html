@@ -25,24 +25,24 @@
         }
 
         .balloon {
-            width: 50px;
-            height: 70px;
+            width: 10vw;
+            height: 15vw;
             background-color: red;
             border-radius: 50%;
             position: absolute;
-            bottom: -70px; /* Start below the screen */
-            animation: float 15s ease-in-out infinite; /* Slower animation */
+            bottom: -15vw;
+            animation: float 15s ease-in-out infinite;
         }
 
         @keyframes float {
             0% {
-                transform: translateY(100vh); /* Start at the bottom */
+                transform: translateY(100vh);
             }
             50% {
-                transform: translateY(-150vh); /* Float above */
+                transform: translateY(-150vh);
             }
             100% {
-                transform: translateY(100vh); /* Return to the bottom */
+                transform: translateY(100vh);
             }
         }
 
@@ -59,7 +59,7 @@
 
         /* Glowy Happy Birthday Text */
         h1 {
-            font-size: 4rem;
+            font-size: 5vw;
             color: #ffffff;
             text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
             animation: glow 2s infinite alternate;
@@ -75,13 +75,13 @@
         }
 
         .button {
-            margin-top: 20px;
-            padding: 15px 30px;
+            margin-top: 5vw;
+            padding: 2vw 4vw;
             background-color: #ff69b4;
             color: white;
             border: none;
             border-radius: 10px;
-            font-size: 1.5rem;
+            font-size: 2vw;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
@@ -100,36 +100,36 @@
         }
 
         .cake {
-            font-size: 150px;
+            font-size: 20vw;
             position: relative;
-            margin: 20px 0;
+            margin: 5vh 0;
         }
 
         .candles {
             position: absolute;
-            top: -40px;
+            top: -8vw;
             left: 50%;
             transform: translateX(-50%);
         }
 
         .candle {
-            width: 15px;
-            height: 30px;
+            width: 3vw;
+            height: 5vw;
             background: yellow;
             position: absolute;
-            top: -40px;
+            top: -8vw;
             left: 0;
             transform: translateX(-50%);
             border-radius: 5px;
         }
 
         .flame {
-            width: 15px;
-            height: 20px;
+            width: 3vw;
+            height: 4vw;
             background: orange;
             border-radius: 50%;
             position: absolute;
-            top: -20px;
+            top: -3vw;
             left: 0;
             animation: flicker 0.3s infinite;
         }
@@ -152,14 +152,14 @@
             z-index: 1000;
             top: 0;
             left: 0;
-            background: rgba(0, 0, 0, 0.6); /* Dark background for fireworks */
+            background: rgba(0, 0, 0, 0.6);
             overflow: hidden;
         }
 
         .firework {
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 2vw;
+            height: 2vw;
             border-radius: 50%;
             animation: explode 1s ease-in-out infinite;
         }
@@ -177,13 +177,12 @@
 
         /* Countdown */
         .countdown {
-            font-size: 3rem;
+            font-size: 3vw;
             color: #ff69b4;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 5vh;
         }
 
-        /* Birthday Card */
         .birthday-card {
             display: none;
             background: #fff;
@@ -194,11 +193,101 @@
             box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
             font-size: 1.5rem;
             margin-top: 20px;
-            width: 50%; /* Less wide */
+            width: 80%; /* Adjust width to 80% of the screen */
             max-width: 500px; /* Limit width */
-            margin-left:510px;
+            margin-left: auto;
+            margin-right: auto; /* Center align */
+            position: relative;
+            z-index: 1000;
+        }
+        /* Media Queries for different screen sizes */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 8vw;
+            }
+
+            .button {
+                font-size: 5vw;
+                padding: 3vw 6vw;
+            }
+
+            .cake {
+                font-size: 25vw;
+            }
+
+            .candles {
+                top: -10vw;
+            }
+
+            .candle {
+                width: 6vw;
+                height: 10vw;
+            }
+
+            .flame {
+                width: 6vw;
+                height: 8vw;
+            }
+
+            .countdown {
+                font-size: 4vw;
+            }
+
+            .birthday-card {
+                font-size: 3vw;
+            }
         }
 
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 10vw;
+            }
+
+            .button {
+                font-size: 6vw;
+                padding: 4vw 8vw;
+            }
+
+            .cake {
+                font-size: 30vw;
+            }
+
+            .candles {
+                top: -12vw;
+            }
+
+            .candle {
+                width: 8vw;
+                height: 12vw;
+            }
+
+            .flame {
+                width: 8vw;
+                height: 10vw;
+            }
+
+            .countdown {
+                font-size: 5vw;
+            }
+
+            .birthday-card {
+                font-size: 4vw;
+            }
+        }
+        /* Ensure proper responsiveness for small screens */
+@media screen and (max-width: 600px) {
+    .birthday-card {
+        width: 90%; /* Make it smaller on smaller screens */
+        font-size: 1.2rem; /* Adjust font size */
+    }
+}
+
+/* For tablets or medium-sized screens */
+@media screen and (max-width: 768px) {
+    .birthday-card {
+        width: 85%; /* Slightly larger for medium screens */
+    }
+}
     </style>
 </head>
 <body>
@@ -236,11 +325,9 @@
         const welcomeScreen = document.getElementById("welcomeScreen");
         const cakeContainer = document.getElementById("cakeContainer");
         const cutCakeButton = document.getElementById("cutCakeButton");
-        const blowCandlesButton = document.getElementById("blowCandlesButton");
         const firecrackers = document.getElementById("firecrackers");
         const birthdayCard = document.getElementById("birthdayCard");
         const countdown = document.getElementById("countdown");
-        const nextButton = document.getElementById("nextButton");
 
         // Add balloons dynamically
         const balloons = document.getElementById("balloons");
@@ -249,7 +336,7 @@
             balloon.className = "balloon";
             balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 70%)`;
             balloon.style.left = `${Math.random() * 100}vw`;
-            balloon.style.animationDuration = `${15 + Math.random() * 10}s`; /* Slower animation */
+            balloon.style.animationDuration = `${15 + Math.random() * 10}s`;
             balloons.appendChild(balloon);
         }
 
@@ -283,7 +370,7 @@
                 for (let i = 0; i < 100; i++) {
                     const firework = document.createElement("div");
                     firework.className = "firework";
-                    firework.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 60%)`; // Random colors
+                    firework.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 60%)`;
                     firework.style.left = `${Math.random() * 100}vw`;
                     firework.style.top = `${Math.random() * 100}vh`;
                     firework.style.animationDuration = `${0.5 + Math.random()}s`;
